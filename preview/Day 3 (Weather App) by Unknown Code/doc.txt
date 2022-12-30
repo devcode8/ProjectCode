@@ -1,0 +1,2 @@
+Firstly enter your API key of https://openweathermap.org/
+at js/script.js at line 2 in apiKey
