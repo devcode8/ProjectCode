@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="10 Days 10 JavaScript Project">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Dev Chauhan">
+    <title>TIC TAC TOE Game | Unknown Code</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@100;200;300;400;500;700;800;900&family=Cookie&family=Domine:wght@400;500;700&family=EB+Garamond&family=Fredoka:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="gameArea gameAreaHide">
+        <div class="title game-on">Tic-Tac-Toe Game</div>
+        <div class="resultField">
+            <div>
+                <span id="playerDisplay" class="playerDisplayOne">
+                    Player <span class="displayXO">X</span>
+                </span>
+                <span class="playerOne"></span>
+                <span class="resultPlayerOne">0</span>
+            </div>
+            <div>
+                <span id="playerDisplay" class="playerDisplayTwo">
+                    Player <span class="displayXO">O</span>
+                </span>
+                <span class="playerTwo"></span>
+                <span class="resultPlayerTwo">0</span>
+            </div>
+        </div>
+
+        <div class="messageField">
+            <div class="messageFieldInner"></div>
+        </div>
+        <div class="playField">
+            <button id="one" class="firstRow firstColumn diagonalDown"></button>
+            <button id="two" class="firstRow secondColumn"></button>
+            <button id="three" class="firstRow thirdColumn diagonalUp"></button>
+            <button id="four" class="secondRow firstColumn"></button>
+            <button id="five" class="secondRow secondColumn diagonalDown diagonalUp"></button>
+            <button id="six" class="secondRow thirdColumn"></button>
+            <button id="seven" class="thirdRow firstColumn diagonalUp"></button>
+            <button id="eight" class="thirdRow secondColumn"></button>
+            <button id="nine" class="thirdRow thirdColumn diagonalDown"></button>
+        </div>
+
+        <div class="winnerWindow">
+            <span class="winner">WINNER</span>
+            <span class="winnerName">Name Of Winner</span>
+            <button class="playAgain">Play Again</button>
+            <button class="resetGame">Reset Game</button>
+        </div>
+    </div>
+    <div class="playerNames">
+        <div class="title game-enter">
+            Tic-Tac-Toe Game
+        </div>
+
+        <form action="/tic-tac-toe">
+            <div>
+                <label for="playerX">Enter &#9587;&nbsp; player name:</label>
+                <input type="text" name="" id="playerX"  autofocus>
+            </div>
+            <div>
+                <label for="playerO">Enter &#9711;&nbsp;Player name:</label>
+                <input type="text" name="" id="playerO">
+            </div>
+            <button>
+                Start Game Now
+            </button>
+        </form>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

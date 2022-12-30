@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+:root{
+    --background:rgba(255, 255, 255, 0.1);
+    --inner-background:rgba(255, 255, 255, 0.001);
+    --box-shadow:10px 10px 8px rgba(21, 20, 20, 0.3),
+    20px 20px 50px rgba(0, 0, 0, 0.5);
+}
+*{
+    margin: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #161623;
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
+    font-size: 120%;
+}
+.container{
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container::before{
+    position: absolute;
+    content: '';
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(25deg,#d64c7f,#ee4758 50%);
+    border-radius: 50%;
+    transform: translate(-250px, -120px);
+}
+.container::after{
+    position: absolute;
+    content: '';
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(to right, #8360c3, #2ebf91);
+    border-radius: 50%;
+    transform: translate(250px, 150px);
+}
+.card{
+    position: relative;
+    padding: 30px 30px 38px;
+    border-radius: 30px;
+    max-width: 420px;
+    margin: 1em;
+    box-shadow: var(--box-shadow);
+    background: var(--background);
+    backdrop-filter: blur(180px);
+    z-index: 100;
+    color: #fff;
+    line-height: 2;
+}
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+button{
+    color: #fff;
+    border: none;
+    height: 2em;
+    width:2em;
+    margin-left: 0.5em;
+    border-radius: 50%;
+    font-size: 1.2em;
+    box-shadow: var(--box-shadow);
+    background: transparent;
+}
+
+.search-bar{
+    box-shadow: inset var(--box-shadow);
+    outline: none;
+    padding: 0.5em 1em;
+    border-radius: 24px;
+    width: 200px;
+    background: transparent;
+    color: #fff;
+    font-family: inherit;
+    font-size: 90%;
+}
+.search-bar::placeholder{
+    color: #fff;
+}
+.weather{
+    text-align: center;
+}
+.city{
+    margin-top: 0.3em;
+}
+.temp{
+    font-size: 2em;
+    font-weight: 600;
+}
+.description{
+    font-size: 1em;
+    text-transform: capitalize;
+}

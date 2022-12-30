@@ -66,13 +66,19 @@ body{
     height: 300px;
     border-radius: 20px;
 }
-.download{
-    color: #fff;
-    background: orange;
-    border-radius: 10px;
-    padding: 10px;
+.content{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
 }
-.projects a{
-    text-decoration: none;
+.content a button{
+    border: none;
+    padding: 10px;
+    background: orange;
     color: #fff;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
 }

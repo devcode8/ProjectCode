@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&family=Montserrat&display=swap');
+:root{
+    --background:rgba(255, 255, 255, 0.1);
+    --inner-background:rgba(255, 255, 255, 0.001);
+    --box-shadow:10px 10px 8px rgba(21, 20, 20, 0.3),
+    20px 20px 50px rgba(0, 0, 0, 0.5);
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+}
+
+*::selection {
+    user-select: none;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #161623;
+    cursor: default;
+}
+
+button {
+    cursor: pointer;
+    background: transparent !important;;
+    font-weight: 500;
+    border: none;
+    color: #fff;
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.61);
+    border-radius: 10px;
+}
+
+.spanXO {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.title {
+    width: 100%;
+    height: 10%;
+    letter-spacing: 3px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+.title.game-enter{
+    padding-top: 50px;
+    font-size: 36px;
+    letter-spacing: 1px;
+}
+.playerNames {
+    width: 400px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: var(--background);
+    box-shadow: var(--box-shadow);
+}
+
+.playerNamesHide {
+    display: none;
+}
+
+form {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+label {
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    color: #fff;
+    width: 500px;
+}
+
+form div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 100px;
+}
+
+input {
+    font-size: 25px;
+    color: white;
+    padding: 1px 5px;
+    letter-spacing: 3px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    outline: none;
+}
+
+form button {
+    width: 55%;
+    font-size: 20px;
+    letter-spacing: 1px;
+    padding: 7px 20px;
+}
+
+.gameArea {
+    width: 400px;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--background);
+    box-shadow: var(--box-shadow);
+    border-radius: 20px;
+}
+
+.gameAreaHide {
+    display: none;
+}
+
+
+.resultField {
+    width: 100%;
+    height: 20%;
+    padding: 0px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.resultField div {
+    width: 48%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: #fff;
+}
+
+#playerDisplay {
+    font-size: 16px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgb(102, 114, 146);
+    height: 16%;
+}
+
+.displayXO {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 18px;
+}
+
+.playerDisplayHide {
+    display: none;
+}
+
+.playerOne,
+.playerTwo {
+    height: 28%;
+    font-size: 26px;
+    font-weight: 800;
+    max-width: 98%;
+    overflow: hidden;
+}
+
+.resultPlayerOne,
+.resultPlayerTwo {
+    font-size: 44px;
+    height: 55%;
+}
+
+
+.messageField {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.messageField div {
+    display: flex;
+    align-items: baseline;
+}
+
+
+.playField {
+    width: 100%;
+    height: 60%;
+    padding: 0 5px 5px 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: center;
+}
+
+.playFieldHide {
+    display: none;
+}
+
+
+.playField button {
+    width: 33%;
+    height: 33%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 110px;
+    font-weight: 400;
+    text-shadow: 1px 3px 7px rgba(0, 0, 0, 0.534);
+    transition: all 0.7s ease-in;
+}
+
+.firstColumn,
+.secondColumn,
+.thirdColumn {
+    background: transparent;
+    color: #fff;
+    border-radius: 25px;
+
+}
+
+.firstColumn,
+.secondColumn {
+    border-right: none;
+}
+
+.firstRow,
+.secondRow {
+    border-bottom: none;
+}
+
+.bleepWinner{
+    color: red;
+
+}
+
+.winnerWindow {
+    display: none;
+}
+
+.winnerWindowShow {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 25px;
+}
+
+.winner {
+    font-size: 65px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+    letter-spacing: 10px;
+    color: white
+}
+
+.winnerName {
+    font-size: 40px;
+    padding-bottom: 35px;
+    color: white;
+    max-width: 90%;
+    overflow: hidden;
+}
+
+.playAgain {
+    width: 70%;
+    height: 50px;
+    font-size: 27px;
+    letter-spacing: 2px;
+}
+
+.resetGame {
+    width: 50%;
+    height: 40px;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+
+@media (max-width: 402px) {
+
+    .playerNames {
+        width: 300px;
+        height: 500px;
+    }
+
+    form div {
+        width: 80%;
+        height: 120px;
+    }
+
+    form button {
+        width: 70%;
+        letter-spacing: 1px;
+        padding: 10px 5px;
+    }
+
+    .gameArea {
+        width: 300px;
+        height: 500px;
+    }
+
+    #playerDisplay {
+        font-size: 16px;
+        letter-spacing: 1px;
+        border-bottom: none;
+        height: 16%;
+    }
+
+    .playerOne,
+    .playerTwo {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    .resultPlayerOne,
+    .resultPlayerTwo {
+        font-size: 26px;
+    }
+
+
+    .messageField,
+    .takenMessageDiv {
+        font-size: 20px;
+    }
+
+
+    .playField {
+        padding: 0 5px 5px 5px;
+    }
+
+    .playField button {
+        font-size: 90px;
+    }
+
+
+    .winner {
+        font-size: 55px;
+        font-weight: 200;
+        letter-spacing: 8px;
+    }
+
+    .winnerName {
+        font-size: 50px;
+        font-weight: 400;
+        letter-spacing: 7px;
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 302px) {
+
+    .spanXO {
+        font-family: 'Fredoka', sans-serif;
+        font-size: 26px;
+        font-weight: 400;
+    }
+
+    .title {
+        padding-top: 3px;
+        font-size: 26px;
+    }
+
+    .playerNames {
+        width: 220px;
+        height: 350px;
+    }
+
+    form div {
+        width: 85%;
+        height: 100px;
+    }
+
+    label {
+        font-size: 20px;
+    }
+
+    form button {
+        width: 80%;
+        letter-spacing: 0px;
+        padding: 8px 5px;
+        font-size: 18px;
+    }
+
+    .gameArea {
+        width: 220px;
+        height: 350px;
+    }
+
+    .divPlayeOne,
+    .divPlayeTwo {
+        border: 2px solid rgb(207, 224, 232);
+    }
+
+    #playerDIsplay {
+        font-size: 12px;
+        letter-spacing: 1px;
+        height: 20%;
+    }
+
+    .playerOne,
+    .playerTwo {
+        font-size: 18px;
+        letter-spacing: 0px;
+        height: 30%;
+    }
+
+    .resultPlayerOne,
+    .resultPlayerTwo {
+        font-size: 20px;
+        height: 50%;
+    }
+
+    .messageField,
+    .takenMessageDiv {
+        font-size: 16px;
+    }
+
+    #playerDisplay {
+        font-size: 12px;
+    }
+
+    .displayXO {
+        font-size: 10px;
+    }
+
+
+    .playField {
+        padding: 0 3px 3px 3px;
+    }
+
+    .playField button {
+        font-size: 65px;
+    }
+
+    .winnerWindow {
+        padding-bottom: 2px;
+    }
+
+    .winner {
+        font-size: 45px;
+        font-weight: 200;
+        letter-spacing: 1px;
+    }
+
+    .winnerName {
+        font-size: 35px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        padding-bottom: 10px;
+    }
+
+    .playAgain {
+        width: 70%;
+        height: 40px;
+        font-size: 20px;
+        letter-spacing: 1px;
+        padding: 5px, 8px;
+    }
+
+    .resetGame {
+        width: 50%;
+        height: 30px;
+        font-size: 16px;
+        letter-spacing: 0px;
+        padding: 10px, 15px;
+    }
+
+
+}
