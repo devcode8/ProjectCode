@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap'); 
+:root {
+    --background: rgba(255, 255, 255, 0.1);
+    --inner-background: rgba(255, 255, 255, 0.001);
+    --box-shadow: 10px 10px 8px rgba(21, 20, 20, 0.3),
+        20px 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: #08AEEA;
+    background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+    transform: translate(-250px, -180px);
+    animation: animate 6s linear infinite;
+}
+@keyframes animate{
+    0%,100%{
+        transform: translate(-250px, -180px);
+    }
+    25%{
+        transform: translate(-250px, 180px);
+    }
+    50%{
+        transform: translate(250px, 180px);
+    }
+    75%{
+        transform: translate(250px, -180px);
+    }
+}
+body::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: #FF9A8B;
+    background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+    transform: translate(250px, 180px);
+    animation: animate1 6s linear infinite;
+}
+@keyframes animate1{
+    0%,100%{
+        transform: translate(250px, 180px);
+    }
+    25%{
+        transform: translate(250px, -180px);
+    }
+    50%{
+        transform: translate(-250px, -180px);
+    }
+    75%{
+        transform: translate(-250px, 180px);
+    }
+}
+.conatiner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+    width: 600px;
+    padding: 20px;
+    row-gap: 30px;
+    background: var(--background);
+    box-shadow: var(--box-shadow);
+    border-radius: 20px;
+    backdrop-filter: blur(100px);
+    z-index: 100;
+}
+
+.conatiner textarea {
+    width: 90%;
+    height: 70%;
+    border-radius: 10px;
+    border: none;
+    background: var(--inner-background);
+    box-shadow: var(--box-shadow);
+    padding: 10px;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.conatiner textarea::placeholder {
+    color: #fff;
+}
+
+.conatiner p {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 500;
+}
